@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Localization\**" />
+		<EmbeddedResource Remove="Localization\**" />
+		<None Remove="Localization\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Ardalis.Specification" Version="8.0.0" />
+		<PackageReference Include="Ardalis.Specification.EntityFrameworkCore" Version="8.0.0" />
+		<PackageReference Include="DNTPersianUtils.Core" Version="5.8.1" />
+		<PackageReference Include="MediatR.Contracts" Version="2.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="DomainServices\" />
+	  <Folder Include="DriverAggregate\DomainEvents\" />
+	  <Folder Include="PassengerAggregate\DomainEvents\" />
+	  <Folder Include="SharedKernel\Event\" />
+	  <Folder Include="SharedKernel\Resources\ModelBindingErrorMessages\" />
+	  <Folder Include="SharedKernel\ValueObjects\" />
+	  <Folder Include="ShiftManagerAggregate\" />
+	  <Folder Include="SharedKernel\Resources\DataAnnotations\" />
+	  <Folder Include="SharedKernel\Resources\EnumDisplayNames\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="SharedKernel\Resources\ExceptionMessages\ExceptionStrings.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>ExceptionStrings.resx</DependentUpon>
+	  </Compile>
+	  <Compile Update="SharedKernel\Resources\OtherMessages\MessageStrings.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>MessageStrings.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="SharedKernel\Resources\ExceptionMessages\ExceptionStrings.resx">
+	    <Generator>PublicResXFileCodeGenerator</Generator>
+	    <LastGenOutput>ExceptionStrings.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="SharedKernel\Resources\OtherMessages\MessageStrings.resx">
+	    <Generator>PublicResXFileCodeGenerator</Generator>
+	    <LastGenOutput>MessageStrings.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+</Project>

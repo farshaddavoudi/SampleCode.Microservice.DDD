@@ -1,0 +1,4 @@
+{
+  "dotnet.defaultSolution": "SampleDDDMicroserviceApp.TransportPeople.sln",
+  "csharp.debug.console": "externalTerminal"
+}

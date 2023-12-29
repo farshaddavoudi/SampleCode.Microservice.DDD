@@ -1,0 +1,3 @@
+﻿namespace SampleDDDMicroserviceApp.TransportPeople.Application.PassengerUserCases.CreatePassenger;
+
+public record CreatePassengerCommand();

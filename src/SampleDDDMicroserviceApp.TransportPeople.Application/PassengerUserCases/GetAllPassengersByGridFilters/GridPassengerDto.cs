@@ -1,0 +1,3 @@
+﻿namespace SampleDDDMicroserviceApp.TransportPeople.Application.PassengerUserCases.GetAllPassengersByGridFilters;
+
+public record GridPassengerDto();
