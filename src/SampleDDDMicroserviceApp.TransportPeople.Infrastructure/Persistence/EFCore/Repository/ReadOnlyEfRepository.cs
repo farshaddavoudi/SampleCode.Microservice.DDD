@@ -51,7 +51,7 @@ internal class ReadOnlyEfRepository<TEntity>(
         return await DbSet.ToListAsync(cancellationToken);
     }
 
-    public async Task<List<TMapperDestination>> ToListProjectedAsync<TMapperDestination>(CancellationToken cancellationToken)
+    public async Task<List<TMapperDestination>> ToListAsync<TMapperDestination>(CancellationToken cancellationToken)
     {
         return await DbSet
             .ProjectTo<TMapperDestination>(mapper.ConfigurationProvider)
@@ -59,14 +59,14 @@ internal class ReadOnlyEfRepository<TEntity>(
             .ToListAsync(cancellationToken);
     }
 
-    public async Task<List<TMapperDestination>> ToListProjectedDistinctAsync<TMapperDestination>(CancellationToken cancellationToken)
+    public async Task<List<TMapperDestination>> ToListDistinctAsync<TMapperDestination>(CancellationToken cancellationToken)
     {
         return await DbSet
             .ProjectTo<TMapperDestination>(mapper.ConfigurationProvider)
             .ToListAsync(cancellationToken);
     }
 
-    public async Task<List<TMapperDestination>> ToListProjectedAsync<TMapperDestination>(Specification<TEntity> specification, CancellationToken cancellationToken)
+    public async Task<List<TMapperDestination>> ToListAsync<TMapperDestination>(Specification<TEntity> specification, CancellationToken cancellationToken)
     {
         var queryResult = SpecificationEvaluator.Default.GetQuery(
             query: DbSet,
@@ -78,7 +78,7 @@ internal class ReadOnlyEfRepository<TEntity>(
             .ToListAsync(cancellationToken);
     }
 
-    public async Task<List<TMapperDestination>> ToListProjectedDistinctAsync<TMapperDestination>(Specification<TEntity> specification, CancellationToken cancellationToken)
+    public async Task<List<TMapperDestination>> ToListDistinctAsync<TMapperDestination>(Specification<TEntity> specification, CancellationToken cancellationToken)
     {
         var queryResult = SpecificationEvaluator.Default.GetQuery(
             query: DbSet,
@@ -91,7 +91,7 @@ internal class ReadOnlyEfRepository<TEntity>(
             .ToListAsync(cancellationToken);
     }
 
-    public async Task<List<TSpecResult>> ToListProjectedAsync<TSpecResult>(Specification<TEntity, TSpecResult> specification, CancellationToken cancellationToken)
+    public async Task<List<TSpecResult>> ToListAsync<TSpecResult>(Specification<TEntity, TSpecResult> specification, CancellationToken cancellationToken)
     {
         var queryResult = SpecificationEvaluator.Default.GetQuery(
             query: DbSet,
@@ -102,7 +102,7 @@ internal class ReadOnlyEfRepository<TEntity>(
             .ToListAsync(cancellationToken);
     }
 
-    public async Task<List<TSpecResult>> ToListProjectedDistinctAsync<TSpecResult>(Specification<TEntity, TSpecResult> specification, CancellationToken cancellationToken)
+    public async Task<List<TSpecResult>> ToListDistinctAsync<TSpecResult>(Specification<TEntity, TSpecResult> specification, CancellationToken cancellationToken)
     {
         var queryResult = SpecificationEvaluator.Default.GetQuery(
             query: DbSet,
@@ -134,7 +134,7 @@ internal class ReadOnlyEfRepository<TEntity>(
         return await queryResult.FirstOrDefaultAsync(cancellationToken);
     }
 
-    public async Task<TOut?> FirstOrDefaultProjectedAsync<TOut>(Specification<TEntity, TOut> specification, CancellationToken cancellationToken)
+    public async Task<TOut?> FirstOrDefaultAsync<TOut>(Specification<TEntity, TOut> specification, CancellationToken cancellationToken)
     {
         var queryResult = SpecificationEvaluator.Default.GetQuery(
             query: DbSet,
@@ -144,7 +144,7 @@ internal class ReadOnlyEfRepository<TEntity>(
         return await queryResult.FirstOrDefaultAsync(cancellationToken);
     }
 
-    public async Task<TMapperDestination?> FirstOrDefaultProjectedAsync<TMapperDestination>(Specification<TEntity> specification, CancellationToken cancellationToken)
+    public async Task<TMapperDestination?> FirstOrDefaultAsync<TMapperDestination>(Specification<TEntity> specification, CancellationToken cancellationToken)
     {
         var queryResult = SpecificationEvaluator.Default.GetQuery(
             query: DbSet,
