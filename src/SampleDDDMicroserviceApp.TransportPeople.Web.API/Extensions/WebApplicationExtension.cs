@@ -44,6 +44,7 @@ public static class WebApplicationExtension
         app.UseHangfireDashboard("/hangfire", new DashboardOptions
         {
             DashboardTitle = "CREW REQUEST JOBS",
+            PrefixPath = "Identity",
             Authorization = new[]
             {
                 new HangfireCustomBasicAuthenticationFilter
